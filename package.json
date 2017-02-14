@@ -1,17 +1,17 @@
 {
-    "name": "react-swipeme",
+    "name": "react-swipe-events",
     "version": "1.0.1",
     "description": "Swipe (Touch) event for react component",
     "repository": {
         "type": "git",
-        "url": "https://github.com/iamham/react-swipeme"
+        "url": "https://github.com/iamham/react-swipe-events"
     },
     "author": "Sarun Peetasai",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/iamham/react-swipeme/issues"
+        "url": "https://github.com/iamham/react-swipe-events/issues"
     },
-    "homepage": "https://github.com/iamham/react-swipeme",
+    "homepage": "https://github.com/iamham/react-swipe-events",
     "keywords": [
         "react-component",
         "react",
