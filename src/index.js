@@ -1,6 +1,7 @@
 import React from 'react'
 
 class reactSwipeEvents extends React.Component {
+    
     constructor (props, context) {
         super(props)
         this.state = { originalX: 0, originalY: 0 }
