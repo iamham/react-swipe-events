@@ -11,7 +11,7 @@ describe('ReactSwipeEvents rendering with input children', () => {
         const wrapper = mount(
             <ReactSwipeEvents>
                 <div id='inputDiv'>
-                    Hello World !
+                    Hello Div !
                 </div>
             </ReactSwipeEvents>
         )
@@ -22,7 +22,20 @@ describe('ReactSwipeEvents rendering with input children', () => {
         const wrapper = mount(
             <ReactSwipeEvents>
                 <span id='inputSpan'>
-                    Hello World !
+                    Hello Span !
+                </span>
+            </ReactSwipeEvents>
+        )
+        expect(wrapper.find('#inputSpan')).to.have.length(1)
+    })
+})
+
+describe('ReactSwipeEvents rendering with input children', () => {
+    it('it render input span children correctly', () => {
+        const wrapper = mount(
+            <ReactSwipeEvents>
+                <span id='inputSpan'>
+                    Hello Span !
                 </span>
             </ReactSwipeEvents>
         )
