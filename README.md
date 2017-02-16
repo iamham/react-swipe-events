@@ -1,4 +1,5 @@
 # ReactSwipeEvents: React Swipe (Touch Event) enabler
+https://www.npmjs.com/package/react-swipe-events
 
 This package is based on React-NPM-Boilerplate (https://github.com/juliancwirko/react-npm-boilerplate)
 
@@ -11,7 +12,6 @@ Import this component
 - import ReactSwipeEvents from 'reactSwipeEvents'
 
 Cover your component with ReactSwipeEvents
-- <ReactSwipeEvents><div></div></ReactSwipeEvents>
 
 ## Props
 Here is a list of accepted Props
