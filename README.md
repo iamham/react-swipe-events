@@ -1,4 +1,5 @@
 # ReactSwipeEvents: React Swipe (Touch Event) enabler
+Simple component to enable Swipe event for react component
 https://www.npmjs.com/package/react-swipe-events
 
 This package is based on React-NPM-Boilerplate (https://github.com/juliancwirko/react-npm-boilerplate)
@@ -15,8 +16,6 @@ Cover your component with ReactSwipeEvents
 
 ## Props
 Here is a list of accepted Props
-- screenXOffset: number - If start screenOffset (X) is higher than, no function will be called out
-- screenYOffset: number - If start screenOffset (Y) is higher than, no function will be called out
 - threshold: number - If delta between start and end of swipe below threshold no function will be called out
 - onSwiping: func - Call out this function when user swiping (onTouchMove)
 - onSwiped: func - Call out this function when user swiped (onTouchEnd)
