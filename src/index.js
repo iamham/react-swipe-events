@@ -9,7 +9,6 @@ class reactSwipeEvents extends React.Component {
         this.onTouchStart = this.onTouchStart.bind(this)
         this.onTouchMove = this.onTouchMove.bind(this)
         this.onTouchEnd = this.onTouchEnd.bind(this)
-        this.getScreenOffset = this.getScreenOffset.bind(this)
         this.getModifiedProps = this.getModifiedProps.bind(this)
         this.getDelta = this.getDelta.bind(this)
     }
@@ -32,31 +31,19 @@ class reactSwipeEvents extends React.Component {
         const touch = e.changedTouches[0]
         const delta = this.getDelta(touch)
         const current = this.getCurrentPosition(touch)
-        const screenOffset = this.getScreenOffset()
 
         if (Math.abs(delta.x) > this.props.threshold) {
-            if (this.state.originalX < screenOffset.x) {
-                if (delta.x > 0) this.props.onSwipedRight && this.props.onSwipedRight(e, this.state.originalX, current.x)
-                if (delta.x < 0) this.props.onSwipedLeft && this.props.onSwipedLeft(e, this.state.originalX, current.x)
-            }
+            if (delta.x > 0) this.props.onSwipedRight && this.props.onSwipedRight(e, this.state.originalX, current.x)
+            if (delta.x < 0) this.props.onSwipedLeft && this.props.onSwipedLeft(e, this.state.originalX, current.x)
         }
 
         if (Math.abs(delta.y) > this.props.threshold) {
-            if (this.state.originalY < screenOffset.y) {
-                if (delta.y > 0) this.props.onSwipedDown && this.props.onSwipedDown(e, this.state.originalY, current.y)
-                if (delta.y < 0) this.props.onSwipedUp && this.props.onSwipedUp(e, this.state.originalY, current.y)
-            }
+            if (delta.y > 0) this.props.onSwipedDown && this.props.onSwipedDown(e, this.state.originalY, current.y)
+            if (delta.y < 0) this.props.onSwipedUp && this.props.onSwipedUp(e, this.state.originalY, current.y)
         }
 
         this.props.onSwiped && this.props.onSwiped(e, this.state.originalX, this.state.originalY, current.x, current.y, delta.x, delta.y)
         this.setState({ originalX: 0, originalY: 0 })
-    }
-
-    getScreenOffset () {
-        return  {
-            x: this.props.screenXOffset || 0,
-            y: this.props.screenYOffset || 0
-        }
     }
 
     getCurrentPosition (touch) {
@@ -82,8 +69,6 @@ class reactSwipeEvents extends React.Component {
         }
 
         delete props.children
-        delete props.screenXOffset
-        delete props.screenYOffset
         delete props.onSwiping
         delete props.onSwiped
         delete props.onSwipedUp
@@ -113,8 +98,6 @@ reactSwipeEvents.defaultProps = {
 
 reactSwipeEvents.propTypes = {
     children: React.PropTypes.element.isRequired,
-    screenXOffset: React.PropTypes.number,
-    screenYOffset: React.PropTypes.number,
     onSwiping: React.PropTypes.func,
     onSwiped: React.PropTypes.func,
     onSwipedUp: React.PropTypes.func,
