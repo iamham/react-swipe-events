@@ -1,10 +1,11 @@
+import Adapter from 'enzyme-adapter-react-16'
+import Enzyme, { mount } from 'enzyme'
 import React from 'react'
-
-import { mount } from 'enzyme'
-import {expect} from 'chai'
-import sinon from 'sinon'
-
 import ReactSwipeEvents from '../index'
+import sinon from 'sinon'
+import { expect } from 'chai'
+
+Enzyme.configure({ adapter: new Adapter() })
 
 describe('ReactSwipeEvents rendering with input children', () => {
     it('it render input div children correctly', () => {
