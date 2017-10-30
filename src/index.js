@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 class reactSwipeEvents extends React.Component {
-    
+
     constructor (props, context) {
         super(props)
         this.state = { originalX: 0, originalY: 0 }
-        
+
         this.onTouchStart = this.onTouchStart.bind(this)
         this.onTouchMove = this.onTouchMove.bind(this)
         this.onTouchEnd = this.onTouchEnd.bind(this)
@@ -97,15 +98,15 @@ reactSwipeEvents.defaultProps = {
 }
 
 reactSwipeEvents.propTypes = {
-    children: React.PropTypes.element.isRequired,
-    onSwiping: React.PropTypes.func,
-    onSwiped: React.PropTypes.func,
-    onSwipedUp: React.PropTypes.func,
-    onSwipedDown: React.PropTypes.func,
-    onSwipedLeft: React.PropTypes.func,
-    onSwipedRight: React.PropTypes.func,
-    nodeName: React.PropTypes.string,
-    threshold: React.PropTypes.number,
+    children: PropTypes.element.isRequired,
+    onSwiping: PropTypes.func,
+    onSwiped: PropTypes.func,
+    onSwipedUp: PropTypes.func,
+    onSwipedDown: PropTypes.func,
+    onSwipedLeft: PropTypes.func,
+    onSwipedRight: PropTypes.func,
+    nodeName: PropTypes.string,
+    threshold: PropTypes.number,
 }
 
 export default reactSwipeEvents
