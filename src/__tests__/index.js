@@ -1,14 +1,17 @@
 import React from 'react'
 
-import { mount } from 'enzyme'
+import Enzyme from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import {expect} from 'chai'
 import sinon from 'sinon'
 
 import ReactSwipeEvents from '../index'
 
+Enzyme.configure({ adapter: new Adapter() })
+
 describe('ReactSwipeEvents rendering with input children', () => {
     it('it render input div children correctly', () => {
-        const wrapper = mount(
+        const wrapper = Enzyme.mount(
             <ReactSwipeEvents>
                 <div id='inputDiv'>
                     Hello Div !
@@ -19,7 +22,7 @@ describe('ReactSwipeEvents rendering with input children', () => {
     })
 
     it('it render input span children correctly', () => {
-        const wrapper = mount(
+        const wrapper = Enzyme.mount(
             <ReactSwipeEvents>
                 <span id='inputSpan'>
                     Hello Span !
@@ -32,7 +35,7 @@ describe('ReactSwipeEvents rendering with input children', () => {
 
 describe('ReactSwipeEvents rendering with input children', () => {
     it('it render input span children correctly', () => {
-        const wrapper = mount(
+        const wrapper = Enzyme.mount(
             <ReactSwipeEvents>
                 <span id='inputSpan'>
                     Hello Span !
