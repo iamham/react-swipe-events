@@ -50,7 +50,10 @@
         "nodemon": "^1.9.1",
         "sinon": "^1.17.3"
     },
-    "peerDependencies": {},
+    "peerDependencies": {
+        "react": "~0.14.8 || ^15.0.0 || ^16.0.0",
+        "react-dom": "~0.14.8 || ^15.0.0 || ^16.0.0"
+    },
     "dependencies": {
         "babel-runtime": "^6.6.1",
         "prop-types": "^15.6.0",
